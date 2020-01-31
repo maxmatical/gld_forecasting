@@ -71,7 +71,7 @@ class nbeats(Module):
 
         self.stack = nn.ModuleList()
         for i in range(self.n_blocks):
-            self.stack.append(gen_block(self.ni, self.nh, self.theta_dim, self.n_out, bn=self.bn, ps=self.ps[i], actn=self.act_fn))
+            self.stack.append(block(self.ni, self.nh, self.theta_dim, self.n_out, bn=self.bn, ps=self.ps[i], actn=self.act_fn))
 
 
     def forward(self, x_cat:Tensor, x_cont:Tensor) -> Tensor:
